@@ -12,7 +12,6 @@ if __name__ == "__main__":
     title = soup.find('title').contents[0]
     json_out['title'] = title
 
-
     categories = soup.find('meta', attrs={'name': 'keywords'})['content']
     json_out['categories'] = categories.replace(' ', '').split(',')
 
