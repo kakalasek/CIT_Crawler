@@ -3,7 +3,9 @@ from bs4 import BeautifulSoup
 import json
 
 if __name__ == "__main__":
-    content = requests.get("https://www.idnes.cz/zpravy/zahranicni/scholz-litva-estonsko-putin-rozhovor-ukrajina-rusko-valka-nemecko.A241119_093629_zahranicni_jhr")
+    starting_url = "https://www.ceskenoviny.cz/zpravy/zelenskyj-naznacil-ochotu-ukoncit-valku-za-clenstvi-v-nato/2602441" 
+
+    content = requests.get(starting_url)
     soup = BeautifulSoup(content.content, 'lxml')
     json_out = {'title': None, 'categories': None, 'number_of_comments': None, 'number_of_images': None, 'Content': None}
 
