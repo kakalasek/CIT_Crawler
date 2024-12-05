@@ -33,7 +33,7 @@ if __name__ == "__main__":
             # Extract links
             a_tags = soup.find_all('a', href=True)
 
-            links = filter(lambda link: 'www.idnes.cz/zpravy' in link['href'] and '?' not in link['href'] and '/foto' not in link['href'] and '/tisk' not in link['href'] and '/diskuse' not in link['href'] or '.jpg' not in link['href'], a_tags)
+            links = filter(lambda link: 'www.idnes.cz/zpravy' in link['href'] and '?' not in link['href'] and '/foto' not in link['href'] and '/tisk' not in link['href'] and '/diskuse' not in link['href'] and '.jpg' not in link['href'], a_tags)
             links = [link['href'] for link in links]
             #links = map(lambda link: "https://www.ceskenoviny.cz" + link if link[0] == '/' else link, links)
             links = set(links)
